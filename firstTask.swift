@@ -31,15 +31,17 @@ class Person {
 //класс, который содержит в себе метод генерации человека
 class Generator {
     
+    //пустое множество для будущего сбора в него экземпляров людей
     static var array: [Person] = []
     
+    // функция для генерации случайного строкового значения
     static func randomString() -> String {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         let randomCharacters = (0..<30).compactMap { _ in characters.randomElement() }
         return String(randomCharacters)
-    } // функция для генерации случайного строкового значения
+    }
     
-    // метод ниже генерирует случайного человека
+    // метод ниже генерирует случайного человека со случайными свойствами (кроме id)
     static func makePerson(id: Int) -> Person {
         let person = Person(
             id: id,
@@ -66,7 +68,7 @@ class Generator {
     
 }
 
-//финальный класс отвечает за проверку объектов в множестве array на пустые свойства
+//класс выводить в консоль соответствующее сообщение, если внутри экземпляра есть пустое свойство
 class Checker {
     
     static func elementsChecking(arrayAgain: [Person]) {
