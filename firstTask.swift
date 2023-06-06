@@ -73,6 +73,7 @@ class Checker {
     
     static func elementsChecking(arrayAgain: [Person]) {
         for i in 0..<arrayAgain.count {
+            //создаю текстовую переменную, в которую буду собирать сообщение для консоли
             var text: String = "Экземпляр \(arrayAgain[i].id!) имеет пустые поля:"
             if arrayAgain[i].name == nil {
                 text += " name;"
@@ -97,8 +98,11 @@ class Checker {
             }
             if arrayAgain[i].address!.apartmentNumber == nil {
                 text += " apartment number;"
-            print(text)
             }
+            if arrayAgain[i].name != nil && arrayAgain[i].surname != nil && arrayAgain[i].age != nil && arrayAgain[i].address!.city != nil && arrayAgain[i].address!.street != nil && arrayAgain[i].address!.streetNumber != nil && arrayAgain[i].address!.floor != nil && arrayAgain[i].address!.apartmentNumber != nil {
+                text = "Экземпляр \(arrayAgain[i].id!) не имеет пустых полей"
+            }
+            print(text)
         }
     }
 }
