@@ -68,34 +68,36 @@ class Generator {
     
 }
 
-//класс выводить в консоль соответствующее сообщение, если внутри экземпляра есть пустое свойство
+//класс выводит в консоль соответствующее сообщение, если внутри экземпляра есть пустое свойство
 class Checker {
     
     static func elementsChecking(arrayAgain: [Person]) {
         for i in 0..<arrayAgain.count {
+            var text: String = "Экземпляр \(arrayAgain[i].id!) имеет пустые поля:"
             if arrayAgain[i].name == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " name")
+                text += " name;"
             }
             if arrayAgain[i].surname == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " surname")
+                text += " surname;"
             }
             if arrayAgain[i].age == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " age")
+                text += " age;"
             }
             if arrayAgain[i].address!.city == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " city")
+                text += " city;"
             }
             if arrayAgain[i].address!.street == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " street")
+                text += " street;"
             }
             if arrayAgain[i].address!.streetNumber == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " street number")
+                text += " street number;"
             }
             if arrayAgain[i].address!.floor == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " floor")
+                text += " floor;"
             }
             if arrayAgain[i].address!.apartmentNumber == nil {
-                print("Экземпляр \(arrayAgain[i].id!) имеет пустые поля:" + " apartment number")
+                text += " apartment number;"
+            print(text)
             }
         }
     }
