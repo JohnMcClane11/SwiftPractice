@@ -16,11 +16,7 @@ func tupleTest(set: Set<Int>) {
     var randomNumber = Int.random(in: 1...10)
     var test = set
     var tuple = test.insert(randomNumber)
-    if tuple.0 {
-        print("Item \(randomNumber) added to collection")
-    } else {
-        print("Item \(randomNumber) already exists")
-    }
+    tuple.0 ? print("Item \(randomNumber) added to collection") : print("Item \(randomNumber) already exists")
 }
 
 var someSet: Set = [1, 2, 3, 4, 5]
