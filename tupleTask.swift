@@ -23,6 +23,6 @@ var someSet: Set = [1, 2, 3, 4, 5]
 var test = tupleTest(set: someSet)
 
 
-//tasl 11.2
+//task 11.2
 let numbers = (1, 2.2, 3)
 var reversedNumbers = (numbers.2, numbers.1, numbers.0)
