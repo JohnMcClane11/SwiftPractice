@@ -31,3 +31,33 @@ class Cat: Animal {
 
 // 22.2
 
+let data = ["name": "Бульбазавр",
+"image": "bulbasaur.jpg",
+"health": "8",
+"experience": "11"]
+
+class Character {
+    let health: Int
+    let experience: Int
+    
+    init(hp: Int, exp: Int) {
+        health = hp
+        experience = exp
+    }
+    
+}
+
+class Pokemon: Character {
+    let name: String
+    let image: String
+    
+    init(dictionary: [String: String]) {
+        name = dictionary["name"] ?? ""
+        image = dictionary["image"] ?? ""
+        
+        let health = Int(dictionary["health"] ?? "") ?? 0
+        let experience = Int(dictionary["experience"] ?? "") ?? 0
+        super.init(hp: health, exp: experience)
+    }
+    
+}
